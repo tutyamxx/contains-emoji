@@ -1,0 +1,23 @@
+{
+  "name": "contains-emoji",
+  "version": "1.0.0",
+  "description": "Checks if a string contains one or more emojis",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "keywords": [
+    "has-emoji",
+    "check-emoji",
+    "emoji",
+    "is-emoji"
+  ],
+  "author": "tuty",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "dependencies": {
+    "emoji-regex": "^9.0.0"
+  }
+}

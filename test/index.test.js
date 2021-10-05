@@ -11,3 +11,9 @@ test("Should return false if string contains one or more emojis", () => {
     expect(containsEmoji("This company makes amazing cakes. I took a slice, it was delicious!")).toBe(false);
     expect(containsEmoji("Checks if a string contains one or more emojis")).toBe(false);
 });
+
+test("Should return false if there is an empty string", () => {
+    expect(containsEmoji("")).toBe(false);
+    expect(containsEmoji()).toBe(false);
+    expect(containsEmoji(" ")).toBe(false);
+});

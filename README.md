@@ -19,7 +19,7 @@ const containsEmoji = require("contains-emoji");
 
 const szTextWithEmoji = "I love pizza 🍕";
 
-if(containsEmoji(szTextWithEmoji))
+if (containsEmoji(szTextWithEmoji))
 {
     console.log("Text contains one or more emojis!");
 }

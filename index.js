@@ -1,10 +1,10 @@
 /**
  *  contains-emoji - Checks if a string contains one or more emojis 👀
- *  @version: v1.1.1
+ *  @version: v1.1.2
  *  @link: https://github.com/tutyamxx/contains-emoji
  *  @license: MIT
  **/
 
-const emojiRegex = require("emoji-regex");
+const emojiRegex = require('emoji-regex');
 
-module.exports = (paramString) => (paramString && paramString.length > 0 && typeof paramString === "string") ? (emojiRegex().test(paramString) ? true : false) : false;
+module.exports = (paramString) => (paramString && paramString.length > 0 && typeof paramString === 'string') ? (!!emojiRegex().test(paramString)) : false;

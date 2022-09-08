@@ -15,12 +15,11 @@
 - Returns a Boolean indicating whether `string` contains one or more emojis.
 
 ```javascript
-const containsEmoji = require("contains-emoji");
+const containsEmoji = require('contains-emoji');
 
-const szTextWithEmoji = "I love pizza 🍕";
+const textWithEmoji = 'I love pizza 🍕';
 
-if (containsEmoji(szTextWithEmoji))
-{
-    console.log("Text contains one or more emojis!");
+if (containsEmoji(textWithEmoji)) {
+    console.log('Text contains one or more emojis!');
 }
 ```

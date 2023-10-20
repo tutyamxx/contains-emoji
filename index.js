@@ -1,6 +1,6 @@
 /**
  *  contains-emoji - Checks if a string contains one or more emojis 👀
- *  @version: v1.1.4
+ *  @version: v1.1.5
  *  @link: https://github.com/tutyamxx/contains-emoji
  *  @license: MIT
  **/

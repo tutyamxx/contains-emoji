@@ -7,15 +7,17 @@
 
 * 🚀 Simple NPM package that checks if a string contains one or more emojis 👀
 * 📦 It uses [Emoji Regex](https://github.com/mathiasbynens/emoji-regex) NPM module
-* See examples below
 
-# Install via [NPM](https://www.npmjs.com/package/contains-emoji)
+# 📦 Install via [NPM](https://www.npmjs.com/package/contains-emoji)
 
-`$ npm i contains-emoji`
+```bash
+$ npm i contains-emoji
+```
 
-# ✅ Usage
+# 💻 Usage
 
 - Returns a Boolean indicating whether `string` contains one or more emojis.
+- See examples below
 
 ```javascript
 const containsEmoji = require('contains-emoji');

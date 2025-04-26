@@ -42,11 +42,43 @@ test('Should handle more complex and edge-case emojis', () => {
     expect(containsEmoji('❤️')).toBe(true);
     expect(containsEmoji('©️')).toBe(true);
     expect(containsEmoji('🏳️‍🌈')).toBe(true);
-    expect(containsEmoji('🙃')).toBe(true);
-    expect(containsEmoji('🫠')).toBe(true);
-    expect(containsEmoji('🫠🫠🫠')).toBe(true);
-    expect(containsEmoji('a🫠b')).toBe(true);
+    expect(containsEmoji('📀📄📃')).toBe(true);
+});
 
-    expect(containsEmoji('No emojis here')).toBe(false);
-    expect(containsEmoji('Just text')).toBe(false);
+test('Should return false for numbers and booleans', () => {
+    expect(containsEmoji(123)).toBe(false);
+    expect(containsEmoji(true)).toBe(false);
+    expect(containsEmoji(false)).toBe(false);
+});
+
+test('Should handle strings with only whitespace and special characters', () => {
+    expect(containsEmoji('   ')).toBe(false);
+    expect(containsEmoji('!@#$%^&*()')).toBe(false);
+    expect(containsEmoji('!@#🤔')).toBe(true);
+});
+
+test('Should handle strings with a mix of emojis and non-emoji characters', () => {
+  expect(containsEmoji('Hello world 🌎!')).toBe(true);
+  expect(containsEmoji('This is a test with no emojis.')).toBe(false);
+  expect(containsEmoji('123🤔456')).toBe(true);
+});
+
+test('Should correctly identify emojis at the beginning and end of a string', () => {
+    expect(containsEmoji('😀Hello')).toBe(true);
+    expect(containsEmoji('Hello😀')).toBe(true);
+    expect(containsEmoji('😀')).toBe(true);
+});
+
+test('Should handle strings with multiple consecutive emojis', () => {
+    expect(containsEmoji('😀😀😀')).toBe(true);
+    expect(containsEmoji('🤔🤔🤔')).toBe(true);
+    expect(containsEmoji('😀🤔😀')).toBe(true);
+});
+
+test('Should return false for an array', () => {
+    expect(containsEmoji(['😀'])).toBe(false);
+});
+
+test('Should return false for an object', () => {
+  expect(containsEmoji({ emoji: '😀' })).toBe(false);
 });

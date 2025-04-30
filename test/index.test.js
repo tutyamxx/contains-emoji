@@ -16,6 +16,7 @@ test('Should return false if there is an empty string, whitespace, undefined, or
     expect(containsEmoji('')).toBe(false);
     expect(containsEmoji()).toBe(false);
     expect(containsEmoji(' ')).toBe(false);
+    // eslint-disable-next-line no-undefined
     expect(containsEmoji(undefined)).toBe(false);
     expect(containsEmoji(null)).toBe(false);
 });
@@ -58,9 +59,9 @@ test('Should handle strings with only whitespace and special characters', () => 
 });
 
 test('Should handle strings with a mix of emojis and non-emoji characters', () => {
-  expect(containsEmoji('Hello world 🌎!')).toBe(true);
-  expect(containsEmoji('This is a test with no emojis.')).toBe(false);
-  expect(containsEmoji('123🤔456')).toBe(true);
+    expect(containsEmoji('Hello world 🌎!')).toBe(true);
+    expect(containsEmoji('This is a test with no emojis.')).toBe(false);
+    expect(containsEmoji('123🤔456')).toBe(true);
 });
 
 test('Should correctly identify emojis at the beginning and end of a string', () => {
@@ -80,5 +81,5 @@ test('Should return false for an array', () => {
 });
 
 test('Should return false for an object', () => {
-  expect(containsEmoji({ emoji: '😀' })).toBe(false);
+    expect(containsEmoji({ emoji: '😀' })).toBe(false);
 });

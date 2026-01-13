@@ -1,6 +1,6 @@
 {
     "name": "contains-emoji",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "Checks if a string contains one or more emojis 👀",
     "main": "index.js",
     "scripts": {

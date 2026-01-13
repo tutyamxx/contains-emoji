@@ -1,6 +1,6 @@
 {
     "name": "contains-emoji",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "description": "Checks if a string contains one or more emojis 👀",
     "main": "index.js",
     "scripts": {
@@ -20,7 +20,7 @@
     },
     "homepage": "https://github.com/tutyamxx/contains-emoji",
     "devDependencies": {
-        "jest": "^29.7.0"
+        "jest": "^30.2.0"
     },
     "dependencies": {
         "emoji-regex": "^10.3.0"

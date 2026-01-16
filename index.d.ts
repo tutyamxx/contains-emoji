@@ -6,4 +6,6 @@
  * @param paramString The string to check for emojis
  * @returns `true` if at least one emoji is found, otherwise `false`
  */
-export default function containsEmoji(paramString: string | null | undefined): boolean;
+declare function containsEmoji(paramString: string | null | undefined): boolean;
+
+export = containsEmoji;

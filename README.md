@@ -19,6 +19,7 @@ $ npm i contains-emoji
 - Returns a Boolean indicating whether `string` contains one or more emojis.
 - See examples below
 
+# JavaScript
 ```javascript
 const containsEmoji = require('contains-emoji');
 
@@ -26,5 +27,23 @@ const textWithEmoji = 'I love pizza 🍕';
 
 if (containsEmoji(textWithEmoji)) {
     console.log('Text contains one or more emojis!');
+}
+```
+
+# TypeScript
+```javascript
+import containsEmoji = require('contains-emoji');
+
+const testStrings = [
+  "Hello world!",
+  "I love pizza 🍕",
+  "No emojis here",
+  "Multiple emojis 🎂🍰👀"
+];
+
+for (const str of testStrings) {
+    const result: boolean = containsEmoji(str);
+
+    console.log(`"${str}" → ${result}`);
 }
 ```

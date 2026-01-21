@@ -1,6 +1,6 @@
 /**
  *  contains-emoji - Checks if a string contains one or more emojis 👀
- *  @version: v1.2.9
+ *  @version: v1.3.0
  *  @link: https://github.com/tutyamxx/contains-emoji
  *  @license: MIT
  **/
@@ -15,10 +15,16 @@ const emojiRegex = require('emoji-regex');
  * @param paramString The string to check for emojis
  * @returns `true` if at least one emoji is found, otherwise `false`
  */
-module.exports = (paramString) => {
+const containsEmoji = (paramString) => {
     if (paramString == null || typeof paramString !== 'string') {
         return false;
     }
 
     return paramString.length > 0 && emojiRegex().test(paramString);
 };
+
+// --| CommonJS export
+module.exports = containsEmoji;
+
+// --| ESM default export for `import` statements
+module.exports.default = containsEmoji;

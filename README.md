@@ -7,6 +7,7 @@
 
 * 🚀 Simple NPM package that checks if a string contains one or more emojis 👀
 * 📦 It uses [Emoji Regex](https://github.com/mathiasbynens/emoji-regex) NPM module
+* ♻️ Works seamlessly with `CommonJS`, `ESM` and `TypeScript`
 
 # 📦 Install via [NPM](https://www.npmjs.com/package/contains-emoji)
 
@@ -19,7 +20,7 @@ $ npm i contains-emoji
 - Returns a Boolean indicating whether `string` contains one or more emojis.
 - See examples below
 
-# JavaScript
+## CommonJS
 ```javascript
 const containsEmoji = require('contains-emoji');
 
@@ -30,20 +31,24 @@ if (containsEmoji(textWithEmoji)) {
 }
 ```
 
-# TypeScript
+## ESM
 ```javascript
-import containsEmoji = require('contains-emoji');
+import containsEmoji from 'contains-emoji';
 
-const testStrings = [
-  "Hello world!",
-  "I love pizza 🍕",
-  "No emojis here",
-  "Multiple emojis 🎂🍰👀"
-];
+const textWithEmoji = 'I love pizza 🍕';
 
-for (const str of testStrings) {
-    const result: boolean = containsEmoji(str);
+if (containsEmoji(textWithEmoji)) {
+    console.log('Text contains one or more emojis!');
+}
+```
 
-    console.log(`"${str}" → ${result}`);
+## TypeScript
+```javascript
+import containsEmoji from 'contains-emoji';
+
+const textWithEmoji: string = 'I love pizza 🍕';
+
+if (containsEmoji(textWithEmoji)) {
+    console.log('Text contains one or more emojis!');
 }
 ```

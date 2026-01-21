@@ -1,6 +1,6 @@
 /**
  *  contains-emoji - Checks if a string contains one or more emojis 👀
- *  @version: v1.3.0
+ *  @version: v1.3.1
  *  @link: https://github.com/tutyamxx/contains-emoji
  *  @license: MIT
  **/
@@ -8,19 +8,22 @@
 const emojiRegex = require('emoji-regex');
 
 /**
- * Checks whether a string contains one or more emoji characters.
+ * Checks whether a string contains one or more emoji characters,
+ * and optionally returns the count of emojis found.
  *
- * Returns `false` if the input is `null`, `undefined`, or not a string.
- *
- * @param paramString The string to check for emojis
- * @returns `true` if at least one emoji is found, otherwise `false`
+ * @param {string} paramString The string to check for emojis
+ * @param {boolean} [returnCount=false] If true, function returns number of emojis instead of boolean
+ * @returns {boolean|number} Boolean if returnCount is false, otherwise number of emojis
  */
-const containsEmoji = (paramString) => {
+const containsEmoji = (paramString, returnCount = false) => {
     if (paramString == null || typeof paramString !== 'string') {
-        return false;
+        return returnCount ? 0 : false;
     }
 
-    return paramString.length > 0 && emojiRegex().test(paramString);
+    const matches = paramString.match(emojiRegex());
+    const count = matches ? matches.length : 0;
+
+    return returnCount ? count : count > 0;
 };
 
 // --| CommonJS export

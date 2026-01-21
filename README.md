@@ -26,29 +26,68 @@ const containsEmoji = require('contains-emoji');
 
 const textWithEmoji = 'I love pizza 🍕';
 
+// --| Default usage: returns true/false
 if (containsEmoji(textWithEmoji)) {
     console.log('Text contains one or more emojis!');
+} else {
+    console.log('No emojis found.');
 }
+
+// --| Using the optional returnCount parameter: returns the number of emojis
+const emojiCount = containsEmoji(textWithEmoji, true);
+console.log(`Number of emojis found: ${emojiCount}`);
+
+/*
+    // --| Expected output
+    Text contains one or more emojis!
+    Number of emojis found: 1
+*/
 ```
 
 ## ESM
 ```javascript
 import containsEmoji from 'contains-emoji';
 
-const textWithEmoji = 'I love pizza 🍕';
+const textWithEmoji = 'I love pizza 🍕 and burgers 🍔!';
 
+// --| Default usage: returns true/false
 if (containsEmoji(textWithEmoji)) {
     console.log('Text contains one or more emojis!');
+} else {
+    console.log('No emojis found.');
 }
+
+// --| Using the optional returnCount parameter: returns the number of emojis
+const emojiCount = containsEmoji(textWithEmoji, true);
+console.log(`Number of emojis found: ${emojiCount}`);
+
+/*
+    // --| Expected output
+    Text contains one or more emojis!
+    Number of emojis found: 2
+*/
 ```
 
 ## TypeScript
 ```javascript
 import containsEmoji from 'contains-emoji';
 
-const textWithEmoji: string = 'I love pizza 🍕';
+const textWithEmoji: string = 'I love pizza 🍕, burgers 🍔 and cakes 🍰!';
 
+// --| Default usage: returns true/false
 if (containsEmoji(textWithEmoji)) {
     console.log('Text contains one or more emojis!');
+} else {
+    console.log('No emojis found.');
 }
+
+// --| Using the optional returnCount parameter: returns the number of emojis
+const emojiCount: number = containsEmoji(textWithEmoji, true);
+console.log(`Number of emojis found: ${emojiCount}`);
+
+/*
+// --| Expected output
+    Text contains one or more emojis!
+    Number of emojis found: 3
+*/
 ```
